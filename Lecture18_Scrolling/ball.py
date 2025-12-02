@@ -2,6 +2,7 @@ from pico2d import *
 import game_world
 import game_framework
 import random
+import common
 
 class Ball:
     image = None
@@ -9,8 +10,8 @@ class Ball:
     def __init__(self, x = None, y = None):
         if Ball.image == None:
             Ball.image = load_image('ball21x21.png')
-        self.x = x if x else random.randint(100, 1180)
-        self.y = y if y else random.randint(100, 924)
+        self.x = x if x else random.randint(21, common.court.w - 1 - 21)
+        self.y = y if y else random.randint(21, common.court.h - 1 - 21)
 
     def draw(self):
         self.image.draw(self.x, self.y)
