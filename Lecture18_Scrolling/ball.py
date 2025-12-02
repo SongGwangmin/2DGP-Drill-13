@@ -28,7 +28,6 @@ class Ball:
         return sx - 10, sy - 10, sx + 10, sy + 10
 
     def get_bb(self):
-        
         return self.x - 10, self.y - 10, self.x + 10, self.y + 10
 
     def handle_collision(self, group, other):
