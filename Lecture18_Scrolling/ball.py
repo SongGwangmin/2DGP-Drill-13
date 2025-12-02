@@ -17,15 +17,19 @@ class Ball:
         sx = self.x - common.court.window_left
         sy = self.y - common.court.window_bottom
         self.image.draw(sx, sy)
-        draw_rectangle(*self.get_bb())
+        draw_rectangle(*self.get_windowbb())
 
     def update(self):
         pass
 
-    def get_bb(self):
+    def get_windowbb(self):
         sx = self.x - common.court.window_left
         sy = self.y - common.court.window_bottom
         return sx - 10, sy - 10, sx + 10, sy + 10
+
+    def get_bb(self):
+        
+        return self.x - 10, self.y - 10, self.x + 10, self.y + 10
 
     def handle_collision(self, group, other):
         match group:
